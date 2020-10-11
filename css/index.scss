@@ -1,0 +1,240 @@
+@import "mixin";
+
+
+* {
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    margin: 0;
+    padding: 0;    
+}
+html {
+    height: 100vh;
+    margin: 0;
+}
+
+
+#header{
+    @include header;
+}
+
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    @media screen and (max-width:480px){
+        width: auto;
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
+}
+
+.top-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.introduction-wrapper{
+    text-align: center;
+    line-height: 1.75em;
+    padding: 5%;
+    
+    h1{
+        padding: 1em 0;
+    }
+    h3{
+        font-weight: normal;
+    }
+    @media screen and (max-width:480px){
+        h3{
+            font-size: 10px;
+            
+            line-height: 1.5em;
+        }
+    }
+}
+
+.news-wrapper{
+    width: 100vw;
+    background-color: rgba($yellow,0.5);
+    display: flex;
+    align-items: center;
+    padding: 5vh 0;
+    position: relative;
+    @media screen and (max-width:480px){
+        padding: 0;
+    }
+    img{
+        width: 20vw;
+    }
+    .wagara-left{
+        height: auto;
+        position: absolute;
+        top: 0;
+        animation-name: fadeleft;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        
+    }
+    @keyframes fadeleft {
+    from {
+        opacity: 0;
+         transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+    .wagara-right{
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        animation-name: faderight;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        
+    }
+    @keyframes faderight {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+    transform: translateX(0);
+    }
+    }
+    .container{
+        margin: 0 auto;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+        .title{
+            width: 10%;
+            margin: auto 2%;
+            @media screen and (max-width:480px){
+                width: 50%;
+                margin: 0%;
+                padding: 0%;
+                h3{
+                    font-size: 10px;
+                    white-space: nowrap;
+                    margin-left: 160%;
+                    text-align: right;
+                }
+            }
+            
+        }
+        .text{
+            display: block;
+            border-left: 3px solid $yellow;
+            border-radius: 1px;
+            padding-left: 2%;
+            @media screen and (max-width:480px){
+                transform: scale(0.5);
+                padding: 0px;
+                margin: 0px;
+                }
+            p{
+                font-size: 1vw;
+                white-space: nowrap;
+            }
+            
+        }
+    }
+    
+}
+
+.contents-wrapper{
+    .contents{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10vh auto;
+        @media screen and (max-width:480px){
+            flex-wrap: wrap;
+            .first{
+                order: 1;
+            }
+            .second{
+                order: 2;
+            }
+        }
+        .title{
+            margin: 0 5%;
+            position: relative;
+            .view-more-hover{
+                transition:all 1s ease-out;
+                opacity:0.8;
+                display: inline-block;
+                width: 60%;
+                height: 30%;
+                position: absolute;
+                bottom: 15%;
+                left: 20%;
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 6px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: $yellow;
+                }
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 1px;
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid;
+                    border-color: transparent transparent $yellow $yellow;
+                    transform: rotate(-135deg);
+                }
+                &:hover{
+                    opacity:1;
+                    width: 90%;
+                    left: 5%;
+                  }
+              }
+            
+              img{
+                width: 10vw;
+                @media screen and (max-width:480px){
+                    width: 50vw;
+                }
+              }
+        }
+        .image{
+            margin: 0 5%;
+            img{
+                width: 30vw;
+                @media screen and (max-width:480px){
+                    width: 120vw;
+                    margin: 15% 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.information{
+    @include information;
+}
+footer{
+    @include footer;
+}

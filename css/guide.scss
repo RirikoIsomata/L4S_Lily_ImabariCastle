@@ -1,0 +1,88 @@
+@import "mixin";
+
+
+* {
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    margin: 0;
+    padding: 0;
+    color: $black;  
+}
+html {
+    height: 100vh;
+    margin: 0;
+}
+/*ヘッダー*/
+
+#header{
+    @include header;
+}
+
+.top-wrapper{
+    @include top;
+}
+.page-title{
+   @include page-title;
+}
+.contents-wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    @media screen and (max-width:480px){
+        width: auto;
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
+    h2{
+        display: table;
+        margin: 0 auto;
+        font-weight: normal;
+        border-bottom: solid 2px $yellow;
+        border-radius: 1px;
+        margin-bottom: 1em;
+    }
+    .content{
+        margin: 10%;
+        @media screen and (max-width:480px){
+            margin: 20% 0;
+        }
+        p{
+            margin-top: 2em;
+            text-align: center;
+        }
+        .map {
+            position: relative;
+            width: 100%;
+            height: 40vh;
+            padding-top: 10%;
+            overflow:auto; 
+            -webkit-overflow-scrolling:touch;
+            @media screen and (max-width:480px){
+                height: 20vh;
+            }
+            iframe {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                border:none;
+                display:block;
+            }
+        }
+    }
+    img{
+        width: 100%;
+    }
+    .parking-image{
+        display: block;
+        margin: 5% auto;
+        width: 20vw;
+        border: 1px solid $yellow;
+    }
+}
+
+.information{
+    @include information;
+}
+footer{
+    @include footer;
+}
