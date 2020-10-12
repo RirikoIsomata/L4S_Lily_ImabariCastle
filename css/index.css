@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*table
+------------------*/
 * {
   font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
   margin: 0;
@@ -12,19 +14,11 @@ html {
 
 #header {
   width: 90vw;
-  overflow: hidden;
   background: #141000;
   padding: 1% 5%;
   position: fixed;
   z-index: 2;
   vertical-align: middle;
-}
-
-@media screen and (max-width: 480px) {
-  #header {
-    position: relative;
-    overflow: hidden;
-  }
 }
 
 #header h1 {
@@ -39,15 +33,12 @@ html {
 }
 
 #header #nav {
-  overflow: hidden;
   float: right;
   background-color: #141000;
 }
 
 @media screen and (max-width: 480px) {
   #header #nav {
-    display: block;
-    z-index: 3;
     float: none;
     position: absolute;
     height: 100vh;
@@ -56,6 +47,9 @@ html {
     top: 0;
     -webkit-transition: 0.7s;
     transition: 0.7s;
+  }
+  #header #nav ul {
+    margin-top: 50%;
   }
 }
 
@@ -85,6 +79,7 @@ html {
 @media screen and (max-width: 480px) {
   #header #nav li a {
     text-align: center;
+    font-size: 1.5rem;
   }
 }
 
@@ -110,7 +105,7 @@ html {
     z-index: 4;
     display: block;
     position: absolute;
-    top: 25%;
+    top: 30%;
     right: 30px;
     width: 10%;
     height: 50%;
@@ -133,25 +128,29 @@ html {
     top: 0;
   }
   #header #hamburger #line2 {
-    top: 50%;
+    top: 45%;
   }
   #header #hamburger #line3 {
-    bottom: 0px;
+    bottom: 0;
   }
   #header #hamburger .line_1, #header #hamburger .line_2, #header #hamburger .line_3 {
     background: #fff;
   }
   #header #hamburger .line_1 {
-    -webkit-transform: translateY(10%) rotate(-45deg);
-            transform: translateY(10%) rotate(-45deg);
+    -webkit-transform: translateY(14px) rotate(-45deg);
+            transform: translateY(14px) rotate(-45deg);
+    -webkit-transform-origin: 　center center;
+            transform-origin: 　center center;
     top: 0;
   }
   #header #hamburger .line_2 {
     opacity: 0;
   }
   #header #hamburger .line_3 {
-    -webkit-transform: translateY(10%) rotate(45deg);
-            transform: translateY(10%) rotate(45deg);
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+    -webkit-transform-origin: 　0 0;
+            transform-origin: 　0 0;
     bottom: 0;
   }
 }
@@ -164,10 +163,6 @@ html {
 @media screen and (max-width: 480px) {
   .wrapper {
     width: auto;
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
-    -webkit-transform-origin: top center;
-            transform-origin: top center;
   }
 }
 
@@ -202,6 +197,10 @@ html {
 }
 
 @media screen and (max-width: 480px) {
+  .introduction-wrapper {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
   .introduction-wrapper h3 {
     font-size: 10px;
     line-height: 1.5em;
@@ -235,38 +234,6 @@ html {
   height: auto;
   position: absolute;
   top: 0;
-  -webkit-animation-name: fadeleft;
-          animation-name: fadeleft;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes fadeleft {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(150px);
-            transform: translateX(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes fadeleft {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(150px);
-            transform: translateX(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
 }
 
 .news-wrapper .wagara-right {
@@ -274,38 +241,6 @@ html {
   position: absolute;
   bottom: 0;
   right: 0;
-  -webkit-animation-name: faderight;
-          animation-name: faderight;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes faderight {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(-150px);
-            transform: translateX(-150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes faderight {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(-150px);
-            transform: translateX(-150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
 }
 
 .news-wrapper .container {
@@ -362,6 +297,11 @@ html {
   white-space: nowrap;
 }
 
+.contents-wrapper a {
+  text-decoration: none;
+  display: block;
+}
+
 .contents-wrapper .contents {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -395,6 +335,29 @@ html {
 .contents-wrapper .contents .title {
   margin: 0 5%;
   position: relative;
+  color: #141000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contents-wrapper .contents .title h2 {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  margin-bottom: 40%;
+}
+
+.contents-wrapper .contents .title p {
+  text-align: center;
+  white-space: nowrap;
 }
 
 .contents-wrapper .contents .title .view-more-hover {
@@ -405,7 +368,7 @@ html {
   width: 60%;
   height: 30%;
   position: absolute;
-  bottom: 15%;
+  bottom: 5%;
   left: 20%;
 }
 
@@ -440,16 +403,6 @@ html {
   left: 5%;
 }
 
-.contents-wrapper .contents .title img {
-  width: 10vw;
-}
-
-@media screen and (max-width: 480px) {
-  .contents-wrapper .contents .title img {
-    width: 50vw;
-  }
-}
-
 .contents-wrapper .contents .image {
   margin: 0 5%;
 }
@@ -460,7 +413,7 @@ html {
 
 @media screen and (max-width: 480px) {
   .contents-wrapper .contents .image img {
-    width: 120vw;
+    width: 100vw;
     margin: 15% 0;
   }
 }
@@ -547,6 +500,8 @@ footer p {
     display: block;
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
+    -webkit-transform-origin: 35% center;
+            transform-origin: 35% center;
   }
 }
 /*# sourceMappingURL=index.css.map */

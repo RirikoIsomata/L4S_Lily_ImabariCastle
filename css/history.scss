@@ -37,6 +37,12 @@ html {
         width: 75vw;
         margin: 0 auto;
     }
+    /*table
+------------------*/
+    table{
+        @include table;
+    }
+
     .contents{
         display: flex;
         align-items: center;

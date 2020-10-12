@@ -27,9 +27,7 @@ html {
     width: 1200px;
     margin: 0 auto;
     @media screen and (max-width:480px){
-        width: auto;
-        transform: scale(0.7);
-        transform-origin: top center;
+        width: 90vw;
     }
     h2{
         display: table;
@@ -38,6 +36,14 @@ html {
         border-bottom: solid 2px $yellow;
         border-radius: 1px;
         margin-bottom: 1em;
+    }
+    table{
+        @include table;
+        width: 100%;
+        td,th{
+            padding: 1.5% 2%;
+        }
+        
     }
     .content{
         margin: 10%;

@@ -8,15 +8,15 @@ $white: #fff;
 
 @mixin header{
     width: 90vw;
-    overflow: hidden;
+    //height: 100vh;
+    //overflow: hidden;
     background: $black;
     padding: 1% 5%;
     position: fixed;
     z-index: 2;
     vertical-align: middle;
     @media screen and (max-width:480px){
-        position: relative;
-        overflow: hidden;
+        //overflow: hidden;
     }
 
     h1{
@@ -28,19 +28,22 @@ $white: #fff;
     }
 
     #nav{
-        overflow: hidden;
+        //overflow: hidden;
         float: right;
         background-color: $black;
         @media screen and (max-width:480px){
-           display: block;
-           z-index: 3;
+           //display: block;
+           //z-index: 3;
            float: none;
            position: absolute;
            height: 100vh;
            width: 100%; 
            right: -100%; 
            top: 0; 
-           transition: 0.7s;  
+           transition: 0.7s; 
+           ul{
+               margin-top:50%;
+           }
         }
         li{
             list-style-type: none;
@@ -61,8 +64,8 @@ $white: #fff;
                 transition: 0.5s;
                 @media screen and (max-width:480px){
                     text-align: center;
+                    font-size: 1.5rem;
                 }
-            
                 &:hover{
                     border-bottom: 1px solid $white;
                 }
@@ -86,7 +89,7 @@ $white: #fff;
             z-index: 4;
             display: block;
             position: absolute;
-            top: 25%;
+            top: 30%;
             right: 30px;
             width: 10%;
             height: 50%;
@@ -106,23 +109,25 @@ $white: #fff;
                 top: 0;
               }
               #line2 {
-                top: 50%;
+                top: 45%;
               }
               #line3 {
-                bottom: 0px;
+                bottom: 0;
               }
               .line_1,.line_2,.line_3{
                 background: #fff;
               }
               .line_1 {
-                transform: translateY(10%) rotate(-45deg);
+                transform: translateY(14px) rotate(-45deg);
+                transform-origin:　center center;
                 top: 0;
               }
               .line_2 {
                 opacity: 0;
               }
               .line_3 {
-                transform: translateY(10%) rotate(45deg);
+                transform: translateY(0) rotate(45deg);
+                transform-origin:　0 0;
                 bottom: 0;
               }
           }
@@ -140,7 +145,7 @@ $white: #fff;
 }
 
 @mixin page-title{
-    margin: 5%;
+    margin: 15vh 0;
     text-align: center;
     h2{
         line-height: 1em;
@@ -150,6 +155,38 @@ $white: #fff;
         color: $yellow;
         line-height: 1.5em;
     }
+}
+
+/*table
+------------------*/
+@mixin table{
+        border-collapse:collapse;
+        border-top: $black 1px solid;
+        border-left: $black 1px solid;
+        margin: 2% auto 10%;	
+        td, th{
+            border-bottom: $black 1px solid;
+            border-right: $black 1px solid;
+            padding: 1% 3%;
+            vertical-align:middle;
+            
+            @media screen and (max-width:480px){
+                font-size: 0.8rem;
+                padding: 1.5% 1.2%;
+            }
+        }
+        th{
+                font-weight:normal;
+                background-color: rgba($yellow,0.5);
+        }
+
+        td {
+            font-weight:normal;
+        }
+
+        .typeg{ background:rgba($yellow,0.5);}
+
+        .nowrap{ white-space:nowrap;}
 }
 
 @mixin information{
@@ -210,6 +247,7 @@ $white: #fff;
         @media screen and (max-width:480px){
             display: block;
             transform: scale(0.5);
+            transform-origin: 35% center;
         }
     }
 }
