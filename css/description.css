@@ -157,7 +157,7 @@ html {
 }
 
 .top-wrapper {
-  width: 100vw;
+  width: 100%;
 }
 
 .top-wrapper img {
@@ -247,7 +247,7 @@ html {
 
 @media screen and (max-width: 480px) {
   .contents-wrapper .contents .image img {
-    width: 100vw;
+    width: 100%;
     margin: 15% 0;
   }
 }
@@ -255,7 +255,7 @@ html {
 .information {
   background-color: #E8E7E3;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
 }
 
 .information .container {
@@ -316,7 +316,7 @@ html {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: #141000;
   overflow: hidden;
 }

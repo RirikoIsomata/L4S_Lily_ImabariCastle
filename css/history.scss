@@ -37,8 +37,7 @@ html {
         width: 75vw;
         margin: 0 auto;
     }
-    /*table
-------------------*/
+    
     table{
         @include table;
     }
@@ -72,7 +71,7 @@ html {
             img{
                 width: 30vw;
                 @media screen and (max-width:480px){
-                    width: 100vw;
+                    width: 100%;
                     margin: 15% 0;
                 }
             }

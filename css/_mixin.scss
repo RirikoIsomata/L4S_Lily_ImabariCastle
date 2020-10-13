@@ -137,7 +137,7 @@ $white: #fff;
 }
 
 @mixin top {
-    width: 100vw;
+    width: 100%;
     img{
         width: 100%;
         height: auto;
@@ -163,7 +163,10 @@ $white: #fff;
         border-collapse:collapse;
         border-top: $black 1px solid;
         border-left: $black 1px solid;
-        margin: 2% auto 10%;	
+        margin: 2% auto 10%;
+        @media screen and (max-width:480px){
+           margin: 2% 2% 10% 2%;
+        }	
         td, th{
             border-bottom: $black 1px solid;
             border-right: $black 1px solid;
@@ -192,7 +195,7 @@ $white: #fff;
 @mixin information{
     background-color: $gray;
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
     .container{
         margin: 3% 15%;
         display: flex;
@@ -235,7 +238,7 @@ $white: #fff;
     }
 }
 @mixin footer{
-    width: 100vw;
+    width: 100%;
     background-color: $black;
     overflow: hidden;
     p{

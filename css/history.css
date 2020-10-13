@@ -157,7 +157,7 @@ html {
 }
 
 .top-wrapper {
-  width: 100vw;
+  width: 100%;
 }
 
 .top-wrapper img {
@@ -180,11 +180,6 @@ html {
   line-height: 1.5em;
 }
 
-.contents-wrapper {
-  /*table
-------------------*/
-}
-
 .contents-wrapper h2 {
   display: table;
   margin: 0 auto;
@@ -205,6 +200,12 @@ html {
   border-top: #141000 1px solid;
   border-left: #141000 1px solid;
   margin: 2% auto 10%;
+}
+
+@media screen and (max-width: 480px) {
+  .contents-wrapper table {
+    margin: 2% 2% 10% 2%;
+  }
 }
 
 .contents-wrapper table td, .contents-wrapper table th {
@@ -290,7 +291,7 @@ html {
 
 @media screen and (max-width: 480px) {
   .contents-wrapper .contents .image img {
-    width: 100vw;
+    width: 100%;
     margin: 15% 0;
   }
 }
@@ -298,7 +299,7 @@ html {
 .information {
   background-color: #E8E7E3;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
 }
 
 .information .container {
@@ -359,7 +360,7 @@ html {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: #141000;
   overflow: hidden;
 }
